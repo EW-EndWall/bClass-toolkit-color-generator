@@ -37,10 +37,18 @@ export default {
 
 We are designing an interface where options can be determined
 
+### Generate mod
+
+- generateColorPalette
+- generate3ColorHarmony
+- generate4ColorHarmony
+- generateAnalogicalHarmony
+- generateCrossAnalogicalHarmony
+- generateMonochromaticHarmony
+- generateComplementaryHarmony
+
 ```html
 <select name="" id="color-algorithm">
-  <option value="">Default</option>
-  <option value="" disabled>Random</option>
   <option value="generateColorPalette">Sequential Harmony</option>
   <option value="generate3ColorHarmony">3 Color Harmony</option>
   <option value="generate4ColorHarmony">4 Color Harmony</option>
