@@ -1,7 +1,8 @@
-/* * Bclass color generator v1.0.0 (--)
- * * Copyright 2021-2023 ("https://github.com/EW-EndWall/bClass-color-generator/blob/main/LICENSE")
+/*
+ * * Bclass toolkit color generator v1.0.0 (--)
+ * * Copyright 2023 ("https://github.com/EW-EndWall/bClass-color-generator/blob/main/LICENSE")
  * * Licensed ("Bik Public License 4.0")
- * * License Update ("20/11/2023")
+ * * License Update ("20/11/2024")
  */
 export default function colorAlgorithm(algorithm = "", sellectColor = "") {
   if (!sellectColor) {
@@ -35,27 +36,27 @@ export default function colorAlgorithm(algorithm = "", sellectColor = "") {
   }
 }
 
-// _____________________________________________
-// console.log(generate3ColorHarmony("#FF0000"));
+// *_____________________________________________
+// * test code console.log(generate3ColorHarmony("#FF0000"));
 function generate3ColorHarmony(baseColor, count = "3") {
   const palette = [];
 
   const baseHSL = rgbToHsl(baseColor);
 
-  // Helper color angles
-  const angle1 = 120; // 120 degrees
-  const angle2 = 240; // 240 degrees
+  // * Helper color angles
+  const angle1 = 120; // * 120 degrees
+  const angle2 = 240; // * 240 degrees
 
-  // Calculate helper colors
+  // * Calculate helper colors
   const color1 = hslToRgb((baseHSL.h + angle1) % 360, baseHSL.s, baseHSL.l);
   const color2 = hslToRgb((baseHSL.h + angle2) % 360, baseHSL.s, baseHSL.l);
 
-  // Create the palette
+  // * Create the palette
   palette.push(baseColor);
   palette.push(color1);
   palette.push(color2);
 
-  // Calculate tones of additional colors
+  // * Calculate tones of additional colors
   const increment = 360 / (count - 2);
   let hue = (baseHSL.h + increment) % 360;
 
@@ -73,27 +74,27 @@ function generate3ColorHarmony(baseColor, count = "3") {
     }),
   };
 }
-// ##########################
-// console.log(generate4ColorHarmony("#FF0000"));
+// *-----------------------------------------------------------
+// * test code console.log(generate4ColorHarmony("#FF0000"));
 function generate4ColorHarmony(baseColor, count = "4") {
   const palette = [];
 
   const baseHSL = rgbToHsl(baseColor);
 
-  // Helper color angles
-  const angle1 = 30; // 30 degrees
-  const angle2 = 60; // 60 degrees
+  // * Helper color angles
+  const angle1 = 30; // * 30 degrees
+  const angle2 = 60; // * 60 degrees
 
-  // Calculate helper colors
+  // * Calculate helper colors
   const color1 = hslToRgb((baseHSL.h + angle1) % 360, baseHSL.s, baseHSL.l);
   const color2 = hslToRgb((baseHSL.h + angle2) % 360, baseHSL.s, baseHSL.l);
 
-  // Create the palette
+  // * Create the palette
   palette.push(baseColor);
   palette.push(color1);
   palette.push(color2);
 
-  // Calculate tones of additional colors
+  // * Calculate tones of additional colors
   const increment = 360 / (count - 1);
   let hue = (baseHSL.h + increment) % 360;
 
@@ -111,8 +112,8 @@ function generate4ColorHarmony(baseColor, count = "4") {
     }),
   };
 }
-// ##########################
-// console.log(generateAnalogicalHarmony("#FF0000"));
+// *-----------------------------------------------------------
+// * test code console.log(generateAnalogicalHarmony("#FF0000"));
 function generateAnalogicalHarmony(baseColor, count = "5") {
   const palette = [];
 
@@ -123,7 +124,7 @@ function generateAnalogicalHarmony(baseColor, count = "5") {
 
   palette.push(baseColor);
 
-  const hueIncrement = 30; // You can adjust the desired value within the range
+  const hueIncrement = 30; // * You can adjust the desired value within the range
 
   for (let i = 1; i < count; i++) {
     const newHue = (hue + hueIncrement * i) % 360;
@@ -140,8 +141,8 @@ function generateAnalogicalHarmony(baseColor, count = "5") {
     }),
   };
 }
-// ##########################
-// console.log(generateCrossAnalogicalHarmony("#FF0000"));
+// *-----------------------------------------------------------
+// * test code console.log(generateCrossAnalogicalHarmony("#FF0000"));
 function generateCrossAnalogicalHarmony(baseColor, count = "3") {
   const palette = [];
 
@@ -170,8 +171,8 @@ function generateCrossAnalogicalHarmony(baseColor, count = "3") {
     }),
   };
 }
-// ##########################
-// console.log(generateMonochromaticHarmony("#FF0000"));
+// *-----------------------------------------------------------
+// * test code console.log(generateMonochromaticHarmony("#FF0000"));
 function generateMonochromaticHarmony(baseColor, count = "5") {
   var palette = [];
 
@@ -192,8 +193,8 @@ function generateMonochromaticHarmony(baseColor, count = "5") {
     }),
   };
 }
-// ##########################
-// console.log(generateComplementaryHarmony("#FF0000"));
+// *-----------------------------------------------------------
+// * test code console.log(generateComplementaryHarmony("#FF0000"));
 function generateComplementaryHarmony(baseColor, count = "5") {
   var palette = [];
 
@@ -218,8 +219,8 @@ function generateComplementaryHarmony(baseColor, count = "5") {
     }),
   };
 }
-// ##########################
-// console.log(generateColorPalette("#FF0000"));
+// *-----------------------------------------------------------
+// * test code console.log(generateColorPalette("#FF0000"));
 function generateColorPalette(baseColor, count = "5") {
   if (!baseColor) {
     baseColor = getRandomHexColor();
@@ -262,7 +263,7 @@ function modifyColorComponent(component, threshold) {
 }
 
 function convertToRGBA(color) {
-  var hex = color.slice(1); // Remove the "#" character
+  var hex = color.slice(1); // * Remove the "#" character
   var r = parseInt(hex.substr(0, 2), 16);
   var g = parseInt(hex.substr(2, 2), 16);
   var b = parseInt(hex.substr(4, 2), 16);
@@ -279,7 +280,7 @@ function getRandomHexColor() {
 }
 
 function hexToRGB(hex) {
-  var hexValue = hex.slice(1); // Remove the "#" character
+  var hexValue = hex.slice(1); // * Remove the "#" character
   var r = parseInt(hexValue.substr(0, 2), 16);
   var g = parseInt(hexValue.substr(2, 2), 16);
   var b = parseInt(hexValue.substr(4, 2), 16);
@@ -293,8 +294,7 @@ function hexToRGB(hex) {
 function rgbToHex(r, g, b) {
   return "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
 }
-// ##########################
-// -----------------------------------------------------------
+// *-----------------------------------------------------------
 function rgbToHsl(color) {
   const [r, g, b] = color.match(/\w\w/g).map((x) => parseInt(x, 16) / 255);
 

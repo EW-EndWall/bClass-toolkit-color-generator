@@ -3,7 +3,7 @@
     <img src="#" alt="Logo" width="220" height="auto">
   </a>
 
-  <h3 align="center">bClass<br/>color-generator</h3>
+  <h3 align="center">bClass toolkit<br/>color-generator</h3>
 
   <p align="center">
     Frontend library
@@ -27,4 +27,4 @@ It is designed to be used in --- services and systems within the scope of bClass
 
 ## License
 
-To be edited.
+Distributed under the Bik Public License 4.0. See [LICENSE](./LICENSE) for more information.
