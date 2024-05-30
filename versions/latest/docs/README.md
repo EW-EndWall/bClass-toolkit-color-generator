@@ -1,53 +1,59 @@
 # Quick Start
 
-## Vue js
-
-## 1. Stage
-
-First, we perform our import process.
+First we need to import the toolkit
 
 ```js
 import bClassColorGenerator from "./bClass-color-generator.js";
 ```
 
-## 2. Stage
+or
 
-We write our methods that will perform the operations.
+```html
+<script src="./bClass-color-generator.js"></script>
+```
+
+We must transfer the information we need to the variable
+
+> [!TIP] > **Generate mod**
+>
+> - generateColorPalette
+> - generate3ColorHarmony
+> - generate4ColorHarmony
+> - generateAnalogicalHarmony
+> - generateCrossAnalogicalHarmony
+> - generateMonochromaticHarmony
+> - generateComplementaryHarmony
 
 ```js
-export default {
-  data() {
-    return {
-      colorPalette: null,
-    };
-  },
-  methods: {
-    generateFromChosenClick() {
-      const selectAlgorithm = document.getElementById("color-algorithm").value;
-      const selectColor = document.getElementById("base-color").value;
-      this.colorPalette = bClassColorGenerator(selectAlgorithm, selectColor);
-    },
-    randomGenerateClick() {
-      const selectAlgorithm = document.getElementById("color-algorithm").value;
-      this.colorPalette = bClassColorGenerator(selectAlgorithm, null);
-    },
-  },
+const generateColor = document.getElementById("generateColor");
+```
+
+We must enter the information into the function for the operation.
+
+```js
+const colorPalette = {
+  generateFromChosenClick: () =>
+    bClassColorGenerator(
+      document.getElementById("color-algorithm").value,
+      document.getElementById("base-color").value
+    )["hex"].map((color) => {
+      const node = document.createElement("li");
+      node.style.background = color;
+      generateColor.appendChild(node);
+    }),
+  randomGenerateClick: () =>
+    bClassColorGenerator(
+      document.getElementById("color-algorithm").value,
+      null
+    )["hex"].map((color) => {
+      const node = document.createElement("li");
+      node.style.background = color;
+      generateColor.appendChild(node);
+    }),
 };
 ```
 
-## 3. Stage
-
 We are designing an interface where options can be determined
-
-### Generate mod
-
-- generateColorPalette
-- generate3ColorHarmony
-- generate4ColorHarmony
-- generateAnalogicalHarmony
-- generateCrossAnalogicalHarmony
-- generateMonochromaticHarmony
-- generateComplementaryHarmony
 
 ```html
 <select name="" id="color-algorithm">
@@ -64,32 +70,21 @@ We are designing an interface where options can be determined
 <input type="color" id="base-color" value="#FF0000" required />
 <div>
   <button
-    @click="generateFromChosenClick"
+    onclick="colorPalette.generateFromChosenClick()"
     type="submit"
     name="generate-palette"
   >
-    Secilen
+    Sellect
   </button>
-  <button @click="randomGenerateClick" type="submit" name="generate-random">
-    Rasgele
+  <button
+    onclick="colorPalette.randomGenerateClick()"
+    type="submit"
+    name="generate-random"
+  >
+    Random
   </button>
 </div>
-```
-
-## 4. Stage
-
-We are designing an interface where the outputs will be displayed
-
-```html
-<div id="generateColor">
-  <div v-if="colorPalette">
-    <div>
-      <div
-        v-for="(color, index) in colorPalette"
-        :key="index"
-        :style="{ 'background-color': color }"
-      ></div>
-    </div>
-  </div>
+<div>
+  <ul id="generateColor"></ul>
 </div>
 ```
