@@ -1,4 +1,4 @@
-/*
+/***
  * * Bclass toolkit color generator v1.0.0
  * * Copyright 2023 ("https://github.com/EW-EndWall/bClass-color-generator/blob/main/LICENSE")
  * * Licensed ("Bik Public License 4.0")
