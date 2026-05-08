@@ -1,4 +1,4 @@
-# Bclass Toolkit Farbgenerator
+# bClass toolkit color generator
 
 Dieses Toolkit bietet eine Reihe von Funktionen zur Generierung und Manipulation von Farbpaletten basierend auf verschiedenen Harmonie-Regeln. Es unterstützt Konvertierungen zwischen verschiedenen Farbformaten (HEX, RGB, HSL) und kann Farbharmonien wie ergänzend, analog, monochrom und mehr generieren.
 
@@ -154,3 +154,7 @@ const analogicalHarmony = colorAlgorithm(
   </body>
 </html>
 ```
+
+## Lizenz
+
+> Veröffentlicht unter der Bik Public License 4.0. Weitere Informationen finden Sie in der [LICENSE](./../../../LICENSE).

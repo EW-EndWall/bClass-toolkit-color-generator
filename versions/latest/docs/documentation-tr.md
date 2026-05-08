@@ -1,4 +1,4 @@
-# Bclass Toolkit Renk Oluşturucu
+# bClass toolkit color generator
 
 Bu araç seti, farklı tonlu kurallara dayalı renk paletleri oluşturmak ve işlemek için bir dizi işlev sunar. HEX, RGB, HSL gibi çeşitli renk formatları arasında dönüştürme desteği sağlar ve tamamlayıcı, analog, monokrom ve daha fazlası gibi renk uyumlarını üretebilir.
 
@@ -156,3 +156,7 @@ const analogicalHarmony = colorAlgorithm(
   </body>
 </html>
 ```
+
+## Lisans
+
+> Bik Public License 4.0 Lisansı kapsamında dağıtılmaktadır. Daha fazla bilgi için [LICENSE](./../../../LICENSE) dosyasın
